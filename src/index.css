@@ -11,3 +11,30 @@ body {
   background-color: #232323;
   @apply text-white;
 }
+
+.shuffle-button {
+  background: linear-gradient(
+    60deg,
+    #ec6ead 20%,
+    #3494e6 40%,
+    #e8cbc0 60%,
+    #ec6ead 100%
+  );
+  background-size: 200% auto;
+  transition: 0.1s;
+}
+.shuffle-button:hover {
+  animation: shine 2s linear infinite;
+  transform: scale(1.1);
+}
+.arrow{
+  transition: 0.2s;
+}
+.arrow:hover{
+  transform: scale(1.1);
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}

@@ -35,7 +35,7 @@ const Photos = () => {
               onClick={() => {
                 setCurrent(current - 1);
               }}
-              className="cursor-pointer text-2xl"
+              className="arrow cursor-pointer text-2xl"
             />
           )}
         </div>
@@ -46,13 +46,13 @@ const Photos = () => {
               onClick={() => {
                 setCurrent(current + 1);
               }}
-              className="cursor-pointer text-2xl"
+              className="arrow cursor-pointer text-2xl"
             />
           )}
         </div>
       </div>
       <button
-        className="mt-4 p-2 px-4 rounded-full bg-green-500 flex items-center gap-x-1"
+        className="shuffle-button mt-4 p-2 px-4 rounded-full flex items-center gap-x-1"
         onClick={() => {
           setCurrent(Math.floor(Math.random() * maxLength) + 1);
         }}
