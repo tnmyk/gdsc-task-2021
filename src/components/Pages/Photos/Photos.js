@@ -13,7 +13,7 @@ const Photos = () => {
   }, []);
   const [current, setCurrent] = useState(0);
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center mt-4">
       <h1 className="text-3xl font-bold">Fetch Photos</h1>
       <div className="flex gap-x-6 w-11/12 justify-center mt-5 items-center">
         <BsArrowLeftCircle
