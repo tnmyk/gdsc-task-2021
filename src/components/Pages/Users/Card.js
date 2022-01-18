@@ -31,6 +31,8 @@ const Card = ({ data }) => {
           <div>{data?.company.bs}</div>
         </div>
       </div>
+      <br />
+      <span className="text-sm">ID: {data?.id}</span>
     </div>
   );
 };

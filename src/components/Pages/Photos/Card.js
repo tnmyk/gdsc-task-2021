@@ -5,6 +5,7 @@ const Card = ({ data }) => {
         <img src={data?.thumbnailUrl} width={"100%"} />
       </div>
       <h2 className="text-center mt-3 font-medium text-lg">{data?.title}</h2>
+      <span className="text-sm">ID: {data?.id}</span>
     </div>
   );
 };

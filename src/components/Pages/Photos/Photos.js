@@ -28,7 +28,6 @@ const Photos = () => {
   return (
     <main className="flex flex-col items-center mt-4">
       <h1 className="text-3xl font-bold">Fetch Photos</h1>
-      {data?.id}
       <div className="flex gap-x-6 w-11/12 justify-center mt-5 items-center">
         <div className="w-2 h-2">
           {current !== 1 && (
@@ -42,7 +41,7 @@ const Photos = () => {
         </div>
         <Card data={data} />
         <div className="w-2 h-2">
-          {current !== maxLength  && (
+          {current !== maxLength && (
             <BsArrowRightCircle
               onClick={() => {
                 setCurrent(current + 1);
