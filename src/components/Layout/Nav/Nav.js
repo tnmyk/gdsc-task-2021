@@ -2,16 +2,13 @@ import { Link } from "react-router-dom";
 import { BsGithub } from "react-icons/bs";
 const Nav = () => {
   return (
-    <nav className="w-full flex justify-between text-xl p-8 px-16">
+    <nav className="w-full flex justify-between items-center text-xl p-8 px-4 sm:px-16">
       <Link to="/" className="text-2xl">
-        Web Team Task
+        Web Task
       </Link>
-      <div className="flex gap-x-12">
+      <div className={`flex gap-x-4 text-lg`}>
         <Link to="/users">Get Users</Link>
         <Link to="/photos">Get Photos</Link>
-        <a href="/" className="flex gap-x-2 items-center">
-          Project Github <BsGithub />
-        </a>
       </div>
     </nav>
   );

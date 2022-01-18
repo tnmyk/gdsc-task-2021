@@ -1,6 +1,6 @@
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Layout/Footer";
-import Nav from "./components/Layout/Nav";
+import Nav from "./components/Layout/Nav/Nav";
 import Home from "./components/Pages/Home/Home";
 import Photos from "./components/Pages/Photos/Photos";
 import Users from "./components/Pages/Users/Users";
