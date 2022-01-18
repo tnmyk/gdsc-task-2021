@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-
+import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 const Users = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -14,23 +14,24 @@ const Users = () => {
   return (
     <main className="flex flex-col items-center">
       <h1 className="text-3xl font-bold">Fetch Users</h1>
-      <button
-        onClick={() => {
-          if (current === data.length - 1) return;
-          setCurrent(current + 1);
-        }}
-      >
-        +
-      </button>
-      <button
-        onClick={() => {
-          if (current === 0 ) return;
-          setCurrent(current - 1);
-        }}
-      >
-        -
-      </button>
-      <Card data={data.filter((x, index) => index === current)[0]} />
+
+      <div className="flex gap-x-6 w-11/12 justify-center mt-5 items-center">
+        <BsArrowLeftCircle
+          onClick={() => {
+            if (current === 0) return;
+            setCurrent(current - 1);
+          }}
+          className="cursor-pointer text-2xl"
+        />
+        <Card data={data.filter((x, index) => index === current)[0]} />
+        <BsArrowRightCircle 
+          onClick={() => {
+            if (current === data.length - 1) return;
+            setCurrent(current + 1);
+          }}
+          className="cursor-pointer text-2xl"
+        />
+      </div>
     </main>
   );
 };
