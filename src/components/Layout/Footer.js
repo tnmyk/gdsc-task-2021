@@ -1,14 +1,14 @@
 const Footer = () => {
   return (
     <footer
-      className="w-7/12  mt-20  mx-auto flex p-6
+      className="w-10/12 sm:w-9/12 md:w-9/12 lg:w-7/12 mt-20  mx-auto flex p-6
       justify-between"
       style={{ borderTop: "1px solid #737373" }}
     >
-      <div >
-        Submitted by <span className="font-semibold">Tanmay Kachroo</span>
+      <div>
+        Submitted by <span className="font-semibold block md:inline">Tanmay Kachroo</span>
       </div>
-      <div className="flex gap-x-8">
+      <div className="flex flex-col md:flex-row gap-x-8">
         <a href="/">Portfolio</a>
         <a href="/">Github</a>
         <a href="/">Task Github</a>
