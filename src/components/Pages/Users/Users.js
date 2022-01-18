@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
+import { FiShuffle } from "react-icons/fi";
 const Users = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -24,7 +25,7 @@ const Users = () => {
           className="cursor-pointer text-2xl"
         />
         <Card data={data.filter((x, index) => index === current)[0]} />
-        <BsArrowRightCircle 
+        <BsArrowRightCircle
           onClick={() => {
             if (current === data.length - 1) return;
             setCurrent(current + 1);
@@ -32,6 +33,14 @@ const Users = () => {
           className="cursor-pointer text-2xl"
         />
       </div>
+      <button
+        className="mt-4 p-2 px-4 rounded-full bg-green-500 flex items-center gap-x-1"
+        onClick={() => {
+          setCurrent(Math.floor(Math.random() * data.length));
+        }}
+      >
+        Shuffle <FiShuffle />
+      </button>
     </main>
   );
 };
