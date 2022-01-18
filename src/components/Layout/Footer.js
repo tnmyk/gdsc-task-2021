@@ -6,12 +6,23 @@ const Footer = () => {
       style={{ borderTop: "1px solid #737373" }}
     >
       <div>
-        Submitted by <span className="font-semibold block md:inline">Tanmay Kachroo</span>
+        Submitted by{" "}
+        <span className="font-semibold block md:inline">Tanmay Kachroo</span>
       </div>
       <div className="flex flex-col md:flex-row gap-x-8">
-        <a href="/">Portfolio</a>
-        <a href="/">Github</a>
-        <a href="/">Task Github</a>
+        <a href="https://tnmy.vercel.app/" target="_blank" rel="noreferrer">
+          Portfolio
+        </a>
+        <a href="https://github.com/tnmyk" target="_blank" rel="noreferrer">
+          Github
+        </a>
+        <a
+          href="https://github.com/tnmyk/gdsc-web-team-task"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Task Github
+        </a>
       </div>
     </footer>
   );

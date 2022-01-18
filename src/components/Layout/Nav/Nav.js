@@ -6,7 +6,7 @@ const Nav = () => {
       <Link to="/" className="text-2xl">
         Web Task
       </Link>
-      <div className={`flex gap-x-4 text-lg`}>
+      <div className={`flex gap-x-6 text-lg`}>
         <Link to="/users">Get Users</Link>
         <Link to="/photos">Get Photos</Link>
       </div>
