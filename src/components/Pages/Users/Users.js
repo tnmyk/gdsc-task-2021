@@ -3,38 +3,50 @@ import Card from "./Card";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import { FiShuffle } from "react-icons/fi";
 const Users = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
+  const [current, setCurrent] = useState(1);
+  const [maxLength, setMaxLength] = useState();
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch(`https://jsonplaceholder.typicode.com/users`)
+      .then((res) => res.json())
+      .then((res) => {
+        setMaxLength(res.length);
+      });
+  }, []);
+
+  useEffect(() => {
+    getUser();
+  }, [current]);
+
+  const getUser = () => {
+    fetch(`https://jsonplaceholder.typicode.com/users/${current}`)
       .then((res) => res.json())
       .then((res) => {
         setData(res);
       });
-  }, []);
-  const [current, setCurrent] = useState(0);
+  };
   return (
     <main className="flex flex-col items-center mt-4">
       <h1 className="text-3xl font-bold">Fetch Users</h1>
-      {data[current]?.id}
+      {data?.id}
       <div className="flex gap-x-6 w-11/12 justify-center mt-5 items-center">
         <div className="w-2 h-2">
-          {current !== 0 && (
+          {current !== 1 && (
             <BsArrowLeftCircle
               onClick={() => {
-                if (current === 0) return;
+                if (current === 1) return;
                 setCurrent(current - 1);
               }}
               className="cursor-pointer text-2xl"
             />
           )}
         </div>
-        <Card data={data.filter((x, index) => index === current)[0]} />
+        <Card data={data} />
 
         <div className="w-2 h-2">
-          {current !== data.length - 1 && (
+          {current !== 10 && (
             <BsArrowRightCircle
               onClick={() => {
-                if (current === data.length - 1) return;
                 setCurrent(current + 1);
               }}
               className="cursor-pointer text-2xl"
@@ -43,11 +55,10 @@ const Users = () => {
         </div>
       </div>
 
-
       <button
         className="mt-4 p-2 px-4 rounded-full bg-green-500 flex items-center gap-x-1"
         onClick={() => {
-          setCurrent(Math.floor(Math.random() * data.length));
+          setCurrent(Math.floor(Math.random() * maxLength));
         }}
       >
         Shuffle <FiShuffle />
