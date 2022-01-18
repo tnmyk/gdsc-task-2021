@@ -4,38 +4,58 @@ import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import { FiShuffle } from "react-icons/fi";
 const Photos = () => {
   const [data, setData] = useState([]);
+  const [current, setCurrent] = useState(1);
+  const [maxLength, setMaxLength] = useState();
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/photos")
+    fetch(`https://jsonplaceholder.typicode.com/photos`)
+      .then((res) => res.json())
+      .then((res) => {
+        setMaxLength(res.length);
+      });
+  }, []);
+
+  useEffect(() => {
+    getImage();
+  }, [current]);
+
+  const getImage = () => {
+    fetch(`https://jsonplaceholder.typicode.com/photos/${current}`)
       .then((res) => res.json())
       .then((res) => {
         setData(res);
       });
-  }, []);
-  const [current, setCurrent] = useState(0);
+  };
   return (
     <main className="flex flex-col items-center mt-4">
       <h1 className="text-3xl font-bold">Fetch Photos</h1>
+      {data?.id}
       <div className="flex gap-x-6 w-11/12 justify-center mt-5 items-center">
-        <BsArrowLeftCircle
-          onClick={() => {
-            if (current === 0) return;
-            setCurrent(current - 1);
-          }}
-          className="cursor-pointer text-2xl"
-        />
-        <Card data={data.filter((x, index) => index === current)[0]} />
-        <BsArrowRightCircle
-          onClick={() => {
-            if (current === data.length - 1) return;
-            setCurrent(current + 1);
-          }}
-          className="cursor-pointer text-2xl"
-        />
+        <div className="w-2 h-2">
+          {current !== 1 && (
+            <BsArrowLeftCircle
+              onClick={() => {
+                setCurrent(current - 1);
+              }}
+              className="cursor-pointer text-2xl"
+            />
+          )}
+        </div>
+        <Card data={data} />
+        <div className="w-2 h-2">
+          {current !== maxLength - 1 && (
+            <BsArrowRightCircle
+              onClick={() => {
+                setCurrent(current + 1);
+              }}
+              className="cursor-pointer text-2xl"
+            />
+          )}
+        </div>
       </div>
       <button
         className="mt-4 p-2 px-4 rounded-full bg-green-500 flex items-center gap-x-1"
         onClick={() => {
-          setCurrent(Math.floor(Math.random() * data.length));
+          setCurrent(Math.floor(Math.random() * maxLength));
         }}
       >
         Shuffle <FiShuffle />
