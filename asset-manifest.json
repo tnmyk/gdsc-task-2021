@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/gdsc-web-team-task/static/css/main.9b87aeb4.css",
+    "main.js": "/gdsc-web-team-task/static/js/main.294281e7.js",
+    "index.html": "/gdsc-web-team-task/index.html",
+    "main.9b87aeb4.css.map": "/gdsc-web-team-task/static/css/main.9b87aeb4.css.map",
+    "main.294281e7.js.map": "/gdsc-web-team-task/static/js/main.294281e7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9b87aeb4.css",
+    "static/js/main.294281e7.js"
+  ]
+}
