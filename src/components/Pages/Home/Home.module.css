@@ -1,0 +1,10 @@
+.heading {
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 840px) {
+  .heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+}

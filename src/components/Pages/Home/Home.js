@@ -1,5 +1,5 @@
 import Card from "./Card";
-
+import styles from "./Home.module.css";
 const Cards = [
   {
     text: "Get users",
@@ -15,7 +15,7 @@ const Cards = [
 const Home = () => {
   return (
     <main className="flex flex-col items-center">
-      <h1 style={{ fontSize: "5rem" }} className="font-bold  mt-24">
+      <h1 className={`${styles.heading} font-bold  mt-24`}>
         GDSC Web Team Task
       </h1>
       <h2
@@ -24,10 +24,13 @@ const Home = () => {
       >
         by Tanmay Kachroo (20BCE10142)
       </h2>
-      <h2 style={{ color: "#D9D9D9" }} className="mt-24 font-medium text-xl">
+      <h2
+        style={{ color: "#D9D9D9" }}
+        className="text-center mt-24 font-medium text-xl"
+      >
         Control the margin on one side of an element using the utilities.
       </h2>
-      <div className="flex w-10/12 justify-center gap-x-6 mt-3">
+      <div className="flex flex-col sm:flex-row w-full sm:w-10/12 justify-center items-center gap-x-6 gap-y-4 mt-3">
         {Cards.map((card) => {
           return <Card data={card} />;
         })}
