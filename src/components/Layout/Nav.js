@@ -6,10 +6,9 @@ const Nav = () => {
       <Link to="/" className="text-2xl">
         Web Team Task
       </Link>
-      <div className="flex gap-x-16">
-        <a href="/" className="flex gap-x-2 items-center">
-          Github Profile <BsGithub />
-        </a>
+      <div className="flex gap-x-12">
+        <Link to="/users">Get Users</Link>
+        <Link to="/photos">Get Photos</Link>
         <a href="/" className="flex gap-x-2 items-center">
           Project Github <BsGithub />
         </a>
