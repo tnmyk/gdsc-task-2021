@@ -58,7 +58,7 @@ const Users = () => {
       <button
         className="mt-4 p-2 px-4 rounded-full bg-green-500 flex items-center gap-x-1"
         onClick={() => {
-          setCurrent(Math.floor(Math.random() * maxLength));
+          setCurrent(Math.floor(Math.random() * (maxLength))+1);
         }}
       >
         Shuffle <FiShuffle />
