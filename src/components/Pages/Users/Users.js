@@ -44,7 +44,7 @@ const Users = () => {
         <Card data={data} />
 
         <div className="w-2 h-2">
-          {current !== 10 && (
+          {current !== maxLength && (
             <BsArrowRightCircle
               onClick={() => {
                 setCurrent(current + 1);
@@ -58,7 +58,7 @@ const Users = () => {
       <button
         className="mt-4 p-2 px-4 rounded-full bg-green-500 flex items-center gap-x-1"
         onClick={() => {
-          setCurrent(Math.floor(Math.random() * (maxLength))+1);
+          setCurrent(Math.floor(Math.random() * maxLength) + 1);
         }}
       >
         Shuffle <FiShuffle />
