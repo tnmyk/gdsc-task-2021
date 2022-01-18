@@ -20,7 +20,7 @@ const Home = () => {
       </h1>
       <h2
         style={{ fontSize: "1.35rem", color: "#FBFBFB" }}
-        className=" mt-2 font-medim"
+        className="text-center mt-2 font-medim"
       >
         by Tanmay Kachroo (20BCE10142)
       </h2>

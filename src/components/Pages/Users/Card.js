@@ -1,10 +1,10 @@
 const Card = ({ data }) => {
   return (
-    <div className="border border-zinc-600 p-8 py-8  w-7/12 rounded-lg">
+    <div className="border border-zinc-600 p-8 py-8  w-11/12 sm:w-7/12 rounded-lg">
       <h1 className="text-3xl font-bold">{data?.name}</h1>
       <h2 className="text-lg">@{data?.username}</h2>
-      <div className="flex mt-6">
-        <div className="w-1/2 mr-3">
+      <div className="flex flex-col gap-y-4 lg:flex-row mt-6">
+        <div className="sm:w-1/2 sm:mr-3">
           <a
             href={"https://" + data?.website}
             target={"_blank"}
