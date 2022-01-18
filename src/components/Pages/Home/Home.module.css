@@ -1,7 +1,30 @@
 .heading {
   font-size: 5rem;
+  background: #3494e6;
+
+  background: linear-gradient(to right, #ec6ead, #3494e6);
+
+  background: linear-gradient(
+    to right,
+    #ec6ead 20%,
+    #3494e6 40%,
+    #e8cbc0 60%,
+    #ec6ead 80%
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+  background-size: 200% auto;
 }
 
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 @media screen and (max-width: 840px) {
   .heading {
     font-size: 3.5rem;
