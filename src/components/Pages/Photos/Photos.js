@@ -23,7 +23,7 @@ const Photos = () => {
   }, [current]);
 
   const getImage = () => {
-
+    setData(null);
     fetch(`https://jsonplaceholder.typicode.com/photos/${current}`)
       .then((res) => res.json())
       .then((res) => {
