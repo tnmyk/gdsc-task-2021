@@ -5,7 +5,7 @@ import { FiShuffle } from "react-icons/fi";
 const Users = () => {
   const [data, setData] = useState();
   const [current, setCurrent] = useState(1);
-  const [maxLength, setMaxLength] = useState();
+  const [maxLength, setMaxLength] = useState(1);
   useEffect(() => {
     document.title = "Get Users";
     fetch(`https://jsonplaceholder.typicode.com/users`)
