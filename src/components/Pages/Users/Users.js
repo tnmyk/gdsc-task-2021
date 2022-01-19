@@ -7,6 +7,7 @@ const Users = () => {
   const [current, setCurrent] = useState(1);
   const [maxLength, setMaxLength] = useState();
   useEffect(() => {
+    document.title = "Get Users";
     fetch(`https://jsonplaceholder.typicode.com/users`)
       .then((res) => res.json())
       .then((res) => {

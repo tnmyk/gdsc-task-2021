@@ -7,6 +7,7 @@ const Photos = () => {
   const [current, setCurrent] = useState(1);
   const [maxLength, setMaxLength] = useState();
   useEffect(() => {
+    document.title = "Get Photos";
     fetch(`https://jsonplaceholder.typicode.com/photos`)
       .then((res) => res.json())
       .then((res) => {

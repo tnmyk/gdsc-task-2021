@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Card from "./Card";
 import styles from "./Home.module.css";
 const Cards = [
@@ -13,6 +14,9 @@ const Cards = [
   },
 ];
 const Home = () => {
+  useEffect(() => {
+    document.title = "GDSC Web Team Task";
+  }, []);
   return (
     <main className="flex flex-col items-center">
       <h1 className={`${styles.heading} font-bold  mt-24`}>
