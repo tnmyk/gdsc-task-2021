@@ -12,6 +12,9 @@ const Photos = () => {
       .then((res) => res.json())
       .then((res) => {
         setMaxLength(res.length);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
@@ -24,6 +27,9 @@ const Photos = () => {
       .then((res) => res.json())
       .then((res) => {
         setData(res);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   };
   return (
