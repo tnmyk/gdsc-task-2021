@@ -3,7 +3,7 @@ import Card from "./Card";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import { FiShuffle } from "react-icons/fi";
 const Photos = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
   const [current, setCurrent] = useState(1);
   const [maxLength, setMaxLength] = useState(1);
   useEffect(() => {
@@ -23,6 +23,7 @@ const Photos = () => {
   }, [current]);
 
   const getImage = () => {
+
     fetch(`https://jsonplaceholder.typicode.com/photos/${current}`)
       .then((res) => res.json())
       .then((res) => {

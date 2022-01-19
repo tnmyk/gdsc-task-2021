@@ -1,7 +1,7 @@
 const Card = ({ data }) => {
   return (
     <div className="border border-zinc-600 p-8 py-8 w-full sm:w-1/3 rounded-lg flex flex-col items-center">
-      {data.length !=0 ? (
+      {data ? (
         <>
           <div className="rounded-full overflow-hidden   w-1/2 flex items-center justify-center">
             <img src={data?.thumbnailUrl} width={"100%"} />
