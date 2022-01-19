@@ -32,7 +32,7 @@ const Home = () => {
         style={{ color: "#D9D9D9" }}
         className="text-center mt-24 font-medium text-xl"
       >
-        Control the margin on one side of an element using the utilities.
+        Choose between getting Users or Photos
       </h2>
       <div className="flex flex-col sm:flex-row w-full sm:w-10/12 justify-center items-center gap-x-6 gap-y-4 mt-3">
         {Cards.map((card) => {
