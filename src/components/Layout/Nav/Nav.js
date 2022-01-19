@@ -7,8 +7,12 @@ const Nav = () => {
         Web Task
       </Link>
       <div className={`flex gap-x-6 text-lg`}>
-        <Link to="/users">Get Users</Link>
-        <Link to="/photos">Get Photos</Link>
+        <Link to="/users" className="nav-link">
+          Get Users
+        </Link>
+        <Link to="/photos" className="nav-link">
+          Get Photos
+        </Link>
       </div>
     </nav>
   );
